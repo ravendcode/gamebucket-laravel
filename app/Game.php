@@ -11,6 +11,7 @@ class Game extends Model
         'title',
         'filename',
         'path',
+        'visible',
     ];
 
     public static function latest(): Collection
