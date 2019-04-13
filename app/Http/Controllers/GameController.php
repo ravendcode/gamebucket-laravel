@@ -17,7 +17,7 @@ class GameController extends Controller
     public function index()
     {
         $this->title = 'List Games';
-        $this->games = Game::latest();
+        $this->games = Game::latest()->get();
         return $this->view();
     }
 
@@ -106,7 +106,7 @@ class GameController extends Controller
         if (count($dirs) === 3) {
             Storage::disk('public')->deleteDirectory($dirs[0] . '/' . $dirs[1]);
         }
-        $game->delete();
+        $game->forceDelete();
 
         return redirect()->route('games.index');
     }

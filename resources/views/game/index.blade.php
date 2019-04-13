@@ -10,7 +10,7 @@
     </ul>
   </nav>
   <div>
-    @foreach ($games as $game)
+    @forelse ($games as $game)
       <article>
         <h4><a href="{{ route('games.show', $game) }}">{{ $game->title }}</a></h4>
         <a href="{{ route('games.destroy', $game) }}" onclick="event.preventDefault();confirm('You are sure?') ? document.getElementById('{{ $game->id }}-delete-form').submit() : false">Delete</a>
@@ -19,6 +19,10 @@
           @csrf
         </form>
       </article>
-    @endforeach
+    @empty
+      <article>
+        <h4>Games not yet!</h4>
+      </article>
+    @endforelse
   </div>
 @endsection
