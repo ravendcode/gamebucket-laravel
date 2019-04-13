@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="robots" content="all">
-  <title>@yield('title', 'App') - {{ config('app.name') }}</title>
+  <title>@yield('title', 'App') - Admin</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
   <style>
@@ -22,7 +22,7 @@
     <ul>
       <li><a href="{{ route('home') }}">Home</a></li>
       <li><a href="{{ route('games.index') }}">Games</a></li>
-      <li><a href="{{ route('admin') }}">Admin</a></li>
+      <li><a href="{{ route('engines.index') }}">Engines</a></li>
     </ul>
   </nav>
   @yield('content')

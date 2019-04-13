@@ -21,7 +21,7 @@
       </article>
     @empty
       <article>
-        <h4>Games not yet!</h4>
+        <h4>Games Not Yet</h4>
       </article>
     @endforelse
   </div>

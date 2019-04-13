@@ -7,6 +7,14 @@
   <form action="{{ route('games.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="">
+      <span>Engine:</span>
+      <select name="engine">
+        @foreach ($engines as $engine)
+          <option value="{{ $engine->id }}">{{ $engine->name }}</option>
+        @endforeach
+      </select>
+    </div>
+    <div class="">
       <label for="title">Title:</label>
       <input type="text" name="title" id="title" value="{{ old('title') }}">
     </div>

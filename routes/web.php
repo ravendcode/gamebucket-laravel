@@ -16,5 +16,10 @@
 // });
 
 Route::view('/', 'welcome')->name('home');
+Route::view('admin', 'admin')->name('admin');
 
 Route::resource('games', 'GameController');
+
+Route::namespace('Admin')->prefix('admin')->group(function () {
+    Route::resource('engines', 'EngineController');
+});

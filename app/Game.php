@@ -10,11 +10,12 @@ class Game extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = [
-        'title',
-        'filename',
-        'path',
-    ];
+    protected $guarded = [];
+
+    public function engine()
+    {
+        return $this->belongsTo(Engine::class);
+    }
 
     /**
      * Scope a query to latest games.

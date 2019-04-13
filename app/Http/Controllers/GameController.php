@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Engine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Services\Zipper;
@@ -29,6 +30,7 @@ class GameController extends Controller
     public function create()
     {
         $this->title = 'Upload Unity Game';
+        $this->engines = Engine::all();
         return $this->view();
     }
 
@@ -42,7 +44,8 @@ class GameController extends Controller
     public function store(Request $request, Zipper $zipper)
     {
         $data = $request->validate([
-            'title' => 'required',
+            'engine' => 'required|exists:engines,id',
+            'title' => 'required|max:128',
             'file' => 'required|mimes:zip|max:64000',
         ]);
 

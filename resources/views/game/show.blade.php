@@ -14,6 +14,7 @@
 
 @section('content')
   <h1>{{ $title }}</h1>
+  <h4>Engine: {{ $game->engine->name ?? 'None' }}</h4>
   <?php require_once $storage . '/' . $game->path . '/' . 'index.unity.html' ?>
 @endsection
 

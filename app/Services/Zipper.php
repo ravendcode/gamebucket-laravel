@@ -29,6 +29,7 @@ class Zipper
             $zip->extractTo($fullPath);
             $zip->close();
             $game = Game::create([
+                'engine_id' => $data['engine'],
                 'title' => $data['title'],
                 'filename' => $data['file']->getClientOriginalName(),
                 'path' => $path,
