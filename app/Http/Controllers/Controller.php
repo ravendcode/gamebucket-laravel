@@ -11,10 +11,13 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function view()
+    public function view(string $viewName = null)
     {
         $fields = get_object_vars($this);
         unset($fields['middleware']);
+        if ($viewName) {
+            return view($viewName, $fields);
+        }
         $className = explode("\\", static::class);
         $viewName = debug_backtrace()[1]['function'];
         // chek if view methodName have camelcase and transform into method_name
