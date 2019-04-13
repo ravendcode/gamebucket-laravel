@@ -3,7 +3,7 @@
 @section('title', $title)
 
 @push('styles')
-  <link rel="shortcut icon" href="{{ $publicPath }}/TemplateData/favicon.ico">
+  {{-- <link rel="shortcut icon" href="{{ $publicPath }}/TemplateData/favicon.ico"> --}}
   <link rel="stylesheet" href="{{ $publicPath }}/TemplateData/style.css">
   <style>
     .webgl-content {
