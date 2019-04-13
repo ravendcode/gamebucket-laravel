@@ -8,6 +8,7 @@
   <meta name="keywords" content="">
   <meta name="robots" content="all">
   <title>@yield('title', 'App') - {{ config('app.name') }}</title>
+  <link rel="shortcut icon" href="/favicon.ico">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
   <style>
