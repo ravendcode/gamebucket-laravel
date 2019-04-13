@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
 
 class Game extends Model
 {
@@ -11,4 +12,9 @@ class Game extends Model
         'filename',
         'path',
     ];
+
+    public static function latest(): Collection
+    {
+        return Game::where('visible', true)->orderBy('id', 'DESC')->get();
+    }
 }

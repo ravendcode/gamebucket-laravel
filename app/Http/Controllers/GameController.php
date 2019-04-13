@@ -17,7 +17,7 @@ class GameController extends Controller
     public function index()
     {
         $this->title = 'List Games';
-        $this->games = Game::all();
+        $this->games = Game::latest();
         return $this->view();
     }
 

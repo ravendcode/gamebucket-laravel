@@ -18,6 +18,7 @@ class CreateGamesTable extends Migration
             $table->string('title');
             $table->string('filename');
             $table->string('path');
+            $table->boolean('visible')->default(true);
             $table->timestamps();
         });
     }
