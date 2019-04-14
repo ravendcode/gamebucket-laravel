@@ -7,7 +7,7 @@
 
 ## Requirements
 
-* `PHP 7.3`
+* `PHP ^7.3`
 * Set `post_max_size = 64M; upload_max_filesize = 64M;` in `php.ini`
 * `Composer`
 * `MySQL`
